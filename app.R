@@ -4,27 +4,10 @@ library(shinychat)
 library(elmer)
 library(bslib)
 
-files <- list.files("data", pattern = "*.md", full.names = TRUE)
-project_prompts <- vapply(files, function(file) {
-  project_name <- tools::file_path_sans_ext(basename(file))
-  file_content <- readLines(file, warn = FALSE)
-  file_content <- paste(file_content, collapse = "\n")
-  paste0(
-    "Here is the README.md for ",
-    project_name,
-    "\n\n<README>\n",
-    file_content,
-    "\n</README>\n\n"
-  )
-}, character(1))
-project_prompts <- paste(project_prompts, collapse = "")
-prompt <- paste0(
-  paste(readLines("prompt.md"), collapse = "\n"),
-  "\n\n",
-  project_prompts
-)
+prompt <- paste(readLines("prompt.generated.md"), collapse = "\n")
 
-ui <- page_fluid(class = "pt-5",
+ui <- page_fluid(
+  class = "pt-5",
   tags$style("a:not(:hover) { text-decoration: none; }"),
   chat_ui("chat")
 )
