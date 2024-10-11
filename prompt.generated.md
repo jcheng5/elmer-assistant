@@ -13,6 +13,8 @@ Here is the README.md for hadley/elmer:
 
 <!-- badges: start -->
 
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/hadley/elmer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hadley/elmer/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
@@ -66,10 +68,11 @@ regardless of which of the various ways of chatting you use.
 ### Interactive chat console
 
 The most interactive, least programmatic way of using elmer is to chat
-with it directly in your R console.
+with it directly in your R console with `live_console(chat)` or in your
+browser with `live_browser()`.
 
 ``` r
-chat_console(chat)
+live_console(chat)
 #> ╔════════════════════════════════════════════════════════╗
 #> ║  Entering chat console. Use """ for multi-line input.  ║
 #> ║  Press Ctrl+C to quit.                                 ║
