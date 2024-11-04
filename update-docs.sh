@@ -25,6 +25,7 @@ fetch_and_append() {
 repo="hadley/elmer"
 fetch_and_append "$repo" "README.md"
 fetch_and_append "$repo" "vignettes/streaming-async.Rmd"
+fetch_and_append "$repo" "vignettes/structured-data.Rmd"
 fetch_and_append "$repo" "vignettes/tool-calling.Rmd"
 
 # Fetch README for jcheng5/shinychat
